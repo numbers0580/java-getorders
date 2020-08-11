@@ -10,4 +10,6 @@ public interface CustomerService {
     List<Customer> getAllOrders();
 
     Customer getThatCustomer(long custid);
+
+    List<Customer> getAllPartialNames(String partial);
 }

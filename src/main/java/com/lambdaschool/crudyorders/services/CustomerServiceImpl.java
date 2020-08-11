@@ -25,4 +25,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer getThatCustomer(long custid) {
         return custrepos.findById(custid).orElseThrow(() -> new EntityNotFoundException("Customer of ID # " + custid + " was nowhere to bee seen."));
     }
+
+    @Override
+    public List<Customer> getAllPartialNames(String partial) {
+        return custrepos.findByCustnameContainingIgnoringCase(partial);
+    }
 }

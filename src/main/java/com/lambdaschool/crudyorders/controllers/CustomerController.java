@@ -35,9 +35,16 @@ public class CustomerController {
 
     //Test Only
     //localhost:5280/customers/:custcode(notfound)
+    //Test for custcode # 77 was successful
 
     //localhost:5280/customers/namelike/:substring
+    @GetMapping(value = "/namelike/{partial}", produces = "application/json")
+    public ResponseEntity<?> findAllNames(@PathVariable String partial) {
+        List<Customer> partCustomer = customerService.getAllPartialNames(partial);
+        return new ResponseEntity<>(partCustomer, HttpStatus.OK);
+    }
 
     //Test Only
     //localhost:5280/customers/namelike/:substring(notfound)
+    //Test for partial custname of "xzq" was successful
 }
