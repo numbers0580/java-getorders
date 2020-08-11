@@ -2,6 +2,9 @@ DELETE
 FROM orders;
 
 DELETE
+FROM payments;
+
+DELETE
 FROM customers;
 
 DELETE
@@ -86,7 +89,7 @@ INSERT INTO ORDERSPAYMENTS (ordnum, paymentid)
 /*
 We must tell hibernate the ids that have already been used.
 The number must be larger than the last used id.
-50 > 12 so we are good!
+50 > 25 so we are good!
  */
 
  alter sequence hibernate_sequence restart with 50;
